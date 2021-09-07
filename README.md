@@ -1,5 +1,6 @@
 # Welcome to Simple Recommender Sysyem
 This project aim to simple recommendation system using Item2Vec approach and BM25 algorithm.
+We use implicit feedbacks to recommend product for user.
 
 Traditional architecture for recommendation systems consists of the following components:
 * candidate generation: Item2Vec and BM25 for my implementation. We use it to reduce search space because there can be millions of products.
@@ -43,7 +44,7 @@ BM25 is a ranking function used by search engines to estimate the relevance of d
 For better recomendations we need to care price of each product and brands
 * Price Segmentation and Brand Segmentation can be added
 * Association analysis for product, brand, category
-* I need to implement reranking algorithm. Xgboost or LightGBM algorithms can be use learning to rank. Then i can explain feature importance using shap library
+* I need to implement reranking algorithm. Xgboost or LightGBM algorithms can be use learning to rank. Recursive feature elimination technique can be used for feature importance. Or we can use black box explanation libraries like shap.
 * Product, Session Matrix to Get Similar Products (I implement this in notebook but not in docker) Create product, session matrix. Then calculate cosine similarity to similar products. This solutions need to store product2session matrix.
 * If i have more time i will be implement two-tower model. Which can be calculate session to item similarity.
 * Recommendations should be made taking into account the profit of the company. High CR and CTR may not profitable.
@@ -52,9 +53,11 @@ For better recomendations we need to care price of each product and brands
 
 # Evaluation metrics
 All data must be split "sessionid" col for train, test and val data
-I dont have time so i cant calculate  recommendation metrics like Ndcg, mAP, MRR :/
-
-Ndcg@10 can be use for evaluation
+I dont have time so i cant calculate  recommendation metrics like Ndcg@k, mAP@k, MRR, precision@k, recall@k :/
+Ndcg@10 can be use for evaluation and A/B testing
+Our KPIs:
+* Be able to recommend the products that the customer needs in a short time
+* Increase CR and CTR
 
 
 # Installation
