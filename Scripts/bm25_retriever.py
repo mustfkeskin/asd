@@ -19,8 +19,8 @@ class BM25Retriever:
         idx = (-doc_scores).argsort()[:n]
         for i in idx:
             if i != query_id:
-                results.append({"productid": self.meta_df.loc[i, "productid"],
+                results.append({
+                                "productid": self.meta_df.loc[i, "productid"],
                                 "score": doc_scores[i]
                                 })
-
         return results

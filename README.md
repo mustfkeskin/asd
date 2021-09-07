@@ -15,7 +15,7 @@ Item2Vec approach subfield of Collaborative filtering.
 ![Example Item2Vec Result](Assets/item2vec_example.png)
 
 ### Pros
-* We dont need the product information. The page order the user navigates is enough for us
+* We dont need the product information. The products that users navigate during the session will be sufficient.
 * Easily applicable
 * If we have millions of product we can use approximate nearest neighbour techniques like PQ, HNSW ... for faster search. Implementations of these algorithms can be found in the [Faiss](https://github.com/facebookresearch/faiss) library.
 
@@ -26,24 +26,38 @@ Item2Vec approach subfield of Collaborative filtering.
 
 
 ## BM25
-
-
+BM25 is a ranking function used by search engines to estimate the relevance of documents to a given search query. BM25 work like TF-IDF algorithm but BM25 goes beyond this to account for document length and term frequency saturation.
 
 ### Pros
 * Can recommend new product easily
+* There is a no OOV problems :)
 
 ### Cons
-* OOV problem :(
-* We need to update our vector database
+* Not very good as there is no information about user behavior
+* Very simple 
+* It cannot make suggestions in different categories because it is keyword-based.
+* Misspelling words can hurt retreival perfomance
 
+
+## Possible Solutions
+For better recomendations we need to care price of each product and brands
+* Price Segmentation and Brand Segmentation can be added
+* Association analysis for product, brand, category
+* If i have more time i will be implement two-tower model. Which can be calculate session to item similarity.
+* Recommendations should be made taking into account the profit of the company. High CR and CTR may not profitable.
+* By including user visit favorite information in the system, better recommendation systems can be developed with reinforcement algorithms.
 
 
 # Evaluation metrics
+All data must be split "sessionid" col for train, test and val data
+I dont have time so i cant calculate  recommendation metrics like Ndcg, mAP, MRR :/
 Ndcg@10 can be use for evaluation
 
 
-
 # Installation
+It is recommended to install with docker to avoid any problems with the installation.
+You can also install libraries with pip required dependency.
+If you want to update Item2Vec database you need to run Notebook/Recommender.ipynb
 
 * pip install -r requirements.txt
 
@@ -57,6 +71,7 @@ Ndcg@10 can be use for evaluation
 
 
 ## Example API Request
+You can send api request after installing docker.
 When you go to the web browser you use and go to this [link](http://localhost:8000/docs), swagger will open, you can test it from there.
 
 
