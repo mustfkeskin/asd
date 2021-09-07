@@ -51,6 +51,7 @@ For better recomendations we need to care price of each product and brands
 # Evaluation metrics
 All data must be split "sessionid" col for train, test and val data
 I dont have time so i cant calculate  recommendation metrics like Ndcg, mAP, MRR :/
+
 Ndcg@10 can be use for evaluation
 
 
