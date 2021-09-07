@@ -43,6 +43,7 @@ BM25 is a ranking function used by search engines to estimate the relevance of d
 For better recomendations we need to care price of each product and brands
 * Price Segmentation and Brand Segmentation can be added
 * Association analysis for product, brand, category
+* Product, Session Matrix to Get Similar Products (I implement this in notebook but not in docker) Create product, session matrix. Then calculate cosine similarity to similar products. This solutions need to store product2session matrix.
 * If i have more time i will be implement two-tower model. Which can be calculate session to item similarity.
 * Recommendations should be made taking into account the profit of the company. High CR and CTR may not profitable.
 * By including user visit favorite information in the system, better recommendation systems can be developed with reinforcement algorithms.
