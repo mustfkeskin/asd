@@ -56,6 +56,7 @@ All data must be split "sessionid" col for train, test and val data
 I dont have time so i cant calculate  recommendation metrics like Ndcg@k, mAP@k, MRR, precision@k, recall@k :/
 
 Ndcg@10 can be use for evaluation and A/B testing
+
 Our KPIs:
 * Be able to recommend the products that the customer needs in a short time
 * Increase CR and CTR
