@@ -64,8 +64,12 @@ Our KPIs:
 
 # Installation
 It is recommended to install with docker to avoid any problems with the installation.
+
 You can also install libraries with pip required dependency.
+
 If you want to update Item2Vec database you need to run Notebook/Recommender.ipynb
+
+You must put "events.json" and "meta.json" files to Data folder.
 
 * pip install -r requirements.txt
 
